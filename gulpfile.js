@@ -77,5 +77,5 @@ gulp.task("default", function(callback){
 
 gulp.task('git-deploy', function() {
   return gulp.src('./dist/**/*')
-    .pipe(ghPages());
+    .pipe(ghPages({branch : 'master'}));
 });
