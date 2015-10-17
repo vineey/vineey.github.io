@@ -1,3 +1,57 @@
-!function(){var e=["ui.router","ui.bootstrap"],n=["core.module","home.module"];angular.element(document).ready(function(){angular.module("vineSpringProject",e.concat(n)).run(["$rootScope",function(e){e.head={},e.head.title="Engineering Simplicity"}]),angular.bootstrap(document,["vineSpringProject"])})}();
-!function(){angular.module("core.module",[function(){}])}();
-!function(){angular.module("home.module",[function(){}])}();
+(function(){
+  var vendorModule = [
+    'ui.router',
+    'ui.bootstrap',
+    'firebase'
+  ];
+
+  var appModule = [
+    'core.module',
+    'home.module'
+  ];
+
+  angular.element(document).ready(function() {
+      angular.module('vineSpringProject', vendorModule.concat(appModule) )
+        .run(['$rootScope', '$firebaseObject',  function ($rootScope, $firebaseObject) {
+          $rootScope.head = {};
+
+          $rootScope.head.title = 'Engineering Simplicity';
+
+          var ref = new Firebase("https://vineey.firebaseio.com/users/user1");
+          var AUTH_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ2IjowLCJkIjp7InVpZCI6InVzZXIiLCJkYXRhIjp7InByb3ZpZGVyIjoiR2l0aHViIn19LCJpYXQiOjE0NDUwNzcyMjZ9.9IepIGqcClcVUuvoKkVXp3IuZaigpUXc3JkpeiTfuH8';
+
+          ref.authWithCustomToken(AUTH_TOKEN, function(error, authData) {
+              if (error) {
+                  console.log("Login Failed!", error);
+              } else {
+                  console.log("Login Succeeded!", authData);
+              }
+          });
+
+          $rootScope.user = $firebaseObject(ref);
+
+      }]);
+
+      angular.bootstrap(document, ['vineSpringProject']);
+  });
+}());
+(function(){
+angular.module('core.module', []);
+}());
+(function(){
+angular.module('home.module', [])
+  .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+      $stateProvider.state('home', {
+        templateUrl: 'module/home/view/home.html',
+        controller: 'HomeCtrl'
+      });
+  }]);
+
+}());
+(function(){
+angular.module('home.module')
+.controller("HomeCtrl", ['$scope', function($scope){
+
+}]);
+
+}());

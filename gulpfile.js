@@ -29,7 +29,7 @@ gulp.src(assets.vendor.css)
 
 gulp.task("vine-js", function(){
 gulp.src(assets.vine.js)
-      .pipe(uglify())
+      //.pipe(uglify())
       .pipe(concat('vine.js'))
       .pipe(gulp.dest('./dist/js'))
       .pipe(connect.reload());

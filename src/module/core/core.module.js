@@ -1,4 +1,3 @@
 (function(){
-angular.module('core.module', [function(){
-}]);
+angular.module('core.module', []);
 }());

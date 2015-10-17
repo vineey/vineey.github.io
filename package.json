@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/vineey/vineey.github.io#readme",
   "devDependencies": {
+    "firebase-token-generator": "^2.0.0",
     "gulp": "^3.9.0",
     "gulp-clean": "^0.3.1",
     "gulp-concat": "^2.6.0",
