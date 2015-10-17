@@ -1,0 +1,32 @@
+{
+  "name": "vineey.github.io",
+  "description": "Vine github UI application",
+  "main": "gulpfile.js",
+  "authors": [
+    "vrustia"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "vine",
+    "github",
+    "ui"
+  ],
+  "homepage": "https://github.com/vineey/vineey.github.io",
+  "moduleType": [
+    "es6"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-bootstrap": "~0.14.2",
+    "bootstrap-css-only": "~3.3.5",
+    "angular-ui-router": "~0.2.15"
+  }
+}

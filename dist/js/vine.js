@@ -1,0 +1,3 @@
+!function(){var e=["ui.router","ui.bootstrap"],n=["core.module","home.module"];angular.element(document).ready(function(){angular.module("vineSpringProject",e.concat(n)).run(["$rootScope",function(e){e.head={},e.head.title="Engineering Simplicity"}]),angular.bootstrap(document,["vineSpringProject"])})}();
+!function(){angular.module("core.module",[function(){}])}();
+!function(){angular.module("home.module",[function(){}])}();
