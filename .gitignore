@@ -93,3 +93,5 @@ bower_components/
 .firebase/
 
 gulpdeploy.js
+
+dist/
