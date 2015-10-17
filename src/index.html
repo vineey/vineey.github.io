@@ -46,8 +46,8 @@
 
 <!-- Page Content -->
 <div class="container">
-    <div class="row">
-        <span>Welcome {{user.lastname}}, {{user.firstname}}</span>
+    <div class="row ng-cloak">
+        <span ng-if="user.lastname != null">Welcome {{user.lastname}}, {{user.firstname}}</span>
     </div>
     <div class="row">
 
