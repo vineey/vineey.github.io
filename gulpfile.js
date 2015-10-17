@@ -6,7 +6,6 @@ var assets = require('./asset.json');
 var gutil = require('gulp-util');
 var runSequence = require('run-sequence');
 var clean = require('gulp-clean');
-var ghPages = require('gulp-gh-pages');
 
 gulp.task("clean", function(){
   return gulp.src('./dist', {read: false})
@@ -73,9 +72,4 @@ gulp.task('watch', function () {
 
 gulp.task("default", function(callback){
   return runSequence('clean', ['watch', 'html', 'fonts', 'vendor-js', 'vendor-css' ,'vine-js', 'vine-css'], ['server'], callback);
-});
-
-gulp.task('git-deploy', function() {
-  return gulp.src('./dist/**/*')
-    .pipe(ghPages({branch : 'master'}));
 });
