@@ -1,0 +1,9 @@
+{
+  "users" : {
+    "user1" : {
+      "username" : "vineey",
+      "firstname" : "John Michael Vincent",
+      "lastname" : "Rustia"
+    }
+  }
+}

@@ -88,5 +88,7 @@ node_modules/
 
 bower_components/
 
-.publish
+.publish/
+
+.firebase/
 
