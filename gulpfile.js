@@ -71,5 +71,9 @@ gulp.task('watch', function () {
 });
 
 gulp.task("default", function(callback){
+  return runSequence('clean', ['html', 'fonts', 'vendor-js', 'vendor-css' ,'vine-js', 'vine-css'], callback);
+});
+
+gulp.task("deploy", function(callback){
   return runSequence('clean', ['watch', 'html', 'fonts', 'vendor-js', 'vendor-css' ,'vine-js', 'vine-css'], ['server'], callback);
 });
